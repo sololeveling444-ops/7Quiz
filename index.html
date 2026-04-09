@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src='script.js'></script>
+
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <h1>7 <span class="accent">QUIZ</span></h1>
+            <p id="sub-header">Select a domain to begin assessment</p>
+        </header>
+
+        <section id="home-screen" class="screen">
+            <div class="topic-grid" id="topic-grid"></div>
+        </section>
+
+        <section id="quiz-screen" class="screen hidden">
+            <div class="quiz-meta">
+                <div class="progress-pill">Question <span id="q-current">1</span>/10</div>
+                <div id="difficulty-tag" class="tag-easy">Easy</div>
+            </div>
+            <div class="progress-bar"><div id="progress-fill"></div></div>
+            <h2 id="question-text">Question content loading...</h2>
+            <div id="options-grid" class="options-grid"></div>
+        </section>
+
+        <section id="result-screen" class="screen hidden">
+            <div class="result-card">
+                <h2>Assessment Complete</h2>
+                <div class="score-hex">
+                    <span id="final-score">0</span>
+                    <small>TOTAL PTS</small>
+                </div>
+                <div class="feedback-box">
+                    <h3>Performance Analysis</h3>
+                    <p id="roadmap-text"></p>
+                </div>
+                <button class="btn-primary" onclick="location.reload()">New Assessment</button>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

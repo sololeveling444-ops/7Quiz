@@ -1,0 +1,143 @@
+:root {
+    --bg-dark: #0a0f1d;
+    --card-bg: #161e31;
+    --accent: #00d2ff;
+    --text-main: #e2e8f0;
+    --text-dim: #94a3b8;
+    --grad: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+    --easy: #10b981;
+    --med: #f59e0b;
+    --hard: #ef4444;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 95%;
+    max-width: 800px;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+}
+
+.main-header { text-align: center; margin-bottom: 2rem; }
+.accent { color: var(--accent); }
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.btn-topic {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text-main);
+    padding: 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.btn-topic:hover {
+    border-color: var(--accent);
+    background: rgba(0, 210, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.progress-bar {
+    height: 6px;
+    background: #2d3748;
+    border-radius: 3px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+}
+
+#progress-fill {
+    height: 100%;
+    background: var(--grad);
+    width: 0%;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-option {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: var(--text-main);
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-bottom: 5px;
+}
+
+.btn-option:hover { background: #334155; }
+
+.hidden { display: none; }
+
+/* Difficulty Colors */
+.tag-easy { color: var(--easy); font-weight: bold; }
+.tag-medium { color: var(--med); font-weight: bold; }
+.tag-hard { color: var(--hard); font-weight: bold; }
+
+.score-hex {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-hex small { font-size: 1rem; color: var(--text-dim); }
+
+.btn-primary {
+    background: var(--grad);
+    border: none;
+    padding: 1rem 2rem;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+.btn-option.correct-answer {
+    background-color: var(--easy) !important;
+    border-color: #fff !important;
+    color: white !important;
+}
+
+.btn-option.wrong-answer {
+    background-color: var(--hard) !important;
+    border-color: #fff !important;
+    color: white !important;
+}
+
+.btn-option:disabled {
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+.topic-grid button:last-child{
+    grid-column:2;
+}
