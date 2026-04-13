@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src='script.js'></script>
+
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="main-header">
+    <h1>7 <span class="accent">QUIZ</span></h1>
+    <p id="sub-header">Welcome, Player!</p>
+</header>
+
+<section id="auth-screen" class="screen">
+    <div class="result-card">
+        <h2>Player Registration</h2>
+        <p style="color: var(--text-dim); margin-bottom: 20px;">Create an account to track your rankings.</p>
+        <input type="text" id="username-input" class="modern-input" placeholder="Enter Username..." autocomplete="off">
+        <button class="btn-primary" onclick="loginUser()">Enter Arcade</button>
+    </div>
+</section>
+
+<section id="home-screen" class="screen hidden">
+    <button class="btn-secondary" onclick="openDashboard()">🏆 View Leaderboards</button>
+    <div class="topic-grid" id="topic-grid"></div>
+</section>
+
+<section id="quiz-screen" class="screen hidden">
+    <div class="quiz-meta">
+        <div class="progress-pill">Question <span id="q-current">1</span>/10</div>
+        <div id="difficulty-tag" class="tag-easy">Easy</div>
+    </div>
+    <div class="progress-bar"><div id="progress-fill"></div></div>
+    <h2 id="question-text">Question content loading...</h2>
+    <div id="options-grid" class="options-grid"></div>
+</section>
+
+<section id="result-screen" class="screen hidden">
+    <div class="result-card">
+        <h2>Assessment Complete</h2>
+        <div class="score-hex">
+            <span id="final-score">0</span>
+            <small>TOTAL PTS</small>
+        </div>
+        <div class="feedback-box">
+            <h3 id="time-taken-text">Time: 0.0s</h3>
+            <p id="roadmap-text"></p>
+        </div>
+        <div class="options-grid" style="grid-template-columns: 1fr 1fr;">
+            <button class="btn-secondary" onclick="location.reload()">Play Again</button>
+            <button class="btn-primary" onclick="openDashboard()">View Rankings</button>
+        </div>
+    </div>
+</section>
+
+<section id="dashboard-screen" class="screen hidden">
+    <h2 style="text-align: center; color: var(--turquoise);">Global Rankings</h2>
+    <div class="dashboard-tabs" id="dashboard-tabs"></div>
+    <div class="leaderboard-container" id="leaderboard-content"></div>
+    <button class="btn-secondary" style="margin-top: 20px; width: 100%;" onclick="showScreen('home-screen')">Back to Menu</button>
+
+</div>
+    <script src="questions.js"></script
+    <script src="script.js"></script>
+</body>
+</html>
